@@ -19,6 +19,11 @@ export default {
         `Oops, no ${resource} with this ${humanize(field)} found`,
         404
       ),
+    unauthorized: message =>
+      new ApplicationError(
+        message || 'Your access is invalid or expired. Please login again',
+        401
+      ),
   },
   success: (resource, action, data = {}) => ({
     status: 'success',

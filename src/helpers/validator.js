@@ -53,3 +53,18 @@ export const validateMessage = body => {
   }
   return false;
 };
+
+export const validateUser = body => {
+  const { username, password } = body;
+  const errors = {};
+  if (username && username.length < 3) {
+    errors.message = ['username should be at least three (3) characters'];
+  }
+  if (password && password.length < 6) {
+    errors.message = ['password should be at least six (6) characters'];
+  }
+  if (Object.keys(errors).length !== 0) {
+    return errors;
+  }
+  return false;
+};
