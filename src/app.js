@@ -18,9 +18,9 @@ app.use(routes);
 app.get('/', (req, res) =>
   res.status(200).json({
     status: 'success',
-    message: `Welcome to Phone numbers generator. Visit '${
-      req.protocol
-    }://${req.get('host')}/generate' to generate unique phone numbers`,
+    message: `Welcome to sms manager. Visit '${req.protocol}://${req.get(
+      'host'
+    )}/contacts' to view all contacts`,
   })
 );
 
