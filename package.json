@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node dist/index.js",
+    "prestart": "yarn db:migrate",
     "heroku-postbuild": "npm run build",
     "build": "babel src -D --out-dir dist --source-maps",
     "dev": "nodemon --exec babel-node src",
